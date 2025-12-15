@@ -1,0 +1,80 @@
+{% comment %} COLLECTION {% endcomment %}
+<div class="collectionfetch">
+    {%  assign col = section.settings.collection_id %}
+      {% comment %} <img src="{{ col.featured_image | image_url: width: auto, height: auto }}"
+         alt="{{ col.featured_image.alt | escape }}"
+         loading="lazy"
+         width="200px"
+         height="200px"> {% endcomment %}
+      <p class="tit center">{{ col.title }}</p>
+      <hr>
+      <div class="allproductss">
+      {%  for p in col.products %}
+        <div class="product-card-collection">
+            <img src="{{ p.featured_image | image_url: width: auto, height: auto }}" alt="{{ col.featured_image.alt | escape }}" loading="lazy" width="200px"  height="200px">
+            <h3>{{ p.title |truncate :20 }}</h3>
+            <p>{{ p.price | money }}</p>
+        </div>
+      {% endfor %}
+      </div>
+</div>
+{% comment %} COLLECTION LIST {% endcomment %}
+<div class="collectionlist-slider">
+{% for collection in section.settings.collection-list %}
+  <div class="collection-card">
+     <img src="{{ collection.featured_image | image_url: width: auto, height: auto }}"
+         alt="{{ collection.featured_image.alt | escape }}"
+         loading="lazy"
+         width="200px"
+         height="200px">
+    <h3>{{ collection.title }}</h3>
+  </div>
+{% endfor %}
+</div>
+<style>
+   .allproductss{
+    display:flex;
+    flex-wrap:wrap;
+   
+}
+   .product-card-collection{
+    margin: 0 auto;
+    width:20%;
+    text-align:center;
+}
+.tit{
+    font-size:50px;
+    font-weight:bold;
+    margin: 0;
+}
+.collectionlist-slider{
+    display:flex;
+    gap:20px;
+    overflow-x: scroll;   
+    text-align:center;
+
+}
+</style>
+
+
+{%schema %}{
+"name":"collection_collectionlist",
+"settings":[
+    {
+    "type":"collection",
+    "id": "collection_id",
+    "label":"select one collection"
+    },
+    {
+    "type":"collection_list",
+    "id": "collection-list",
+    "label":"select multiple collection"
+    },
+],
+"presets": [{
+    "name":"collection-collection-list",
+    "category":"Custom Sections"
+}
+]
+}
+{%  endschema %}

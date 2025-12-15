@@ -1,0 +1,84 @@
+{% comment %} PRODUCT {% endcomment %}
+<div class="productfetch">
+      <img src="{{ section.settings.product_id.featured_image | image_url: width: auto, height: auto }}"
+         alt="{{ section.settings.product_id.featured_image.alt | escape }}"
+         loading="lazy"
+         width="200px"
+         height="200px">
+      <h2>{{ section.settings.product_id.title }}</h2>
+      <p>{{ section.settings.product_id.price | money}}</p>
+</div>
+{% comment %} PRODUCT LIST {% endcomment %}
+<div class="productlist-slider-section">
+{% for product in section.settings.product-list %}
+  {% comment %} {% assign p = all_products[product.handle] %} {% endcomment %}
+  {% comment %} {{ product | json }} {% endcomment %}
+  <div class="product-cardd">
+    <img src="{{ product.featured_image  | image_url: width: auto, height: auto }}"
+         alt="{{ product.featured_image.alt | escape }}"
+         loading="lazy"
+         width="200px"
+         height="200px">
+    <h3>{{ product.title }}</h3>
+    <p>{{ product.price | money }}</p>
+  </div>
+{% endfor %}
+</div>
+<style>
+    .productlist-slider-section{
+        margin:0 auto;
+        position:relative;
+        width:50%;
+    }
+    .arrow{
+        background-color:red;
+        border-radius:50%;
+        position:absolute;
+        cursor:pointer;
+        z-index:1;
+        top:50%;
+    }
+    .H_l_arrow{
+        left:0%;
+    }
+    .H_r_arrow{
+        right:0%;
+    }
+</style>
+<script>
+$('.productlist-slider-section').slick({
+    infinite:true,
+    speed:1000,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay:false,
+    arrows: true,
+    fade:true,
+   prevArrow: '<svg class="H_l_arrow arrow" xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 1792 1792" width="20"><path d="M1203 544q0 13-10 23l-393 393 393 393q10 10 10 23t-10 23l-50 50q-10 10-23 10t-23-10l-466-466q-10-10-10-23t10-23l466-466q10-10 23-10t23 10l50 50q10 10 10 23z"/></svg>',
+   nextArrow: '<svg class="H_r_arrow arrow" xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 1792 1792" width="20"><path d="M1171 960q0 13-10 23l-466 466q-10 10-23 10t-23-10l-50-50q-10-10-10-23t10-23l393-393-393-393q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l466 466q10 10 10 23z"/></svg>',
+});
+ 
+</script>
+
+
+{%schema %}{
+"name":"productlist-slider",
+"settings":[
+    {
+    "type":"product",
+    "id": "product_id",
+    "label":"select one product"
+    },
+    {
+    "type":"product_list",
+    "id": "product-list",
+    "label":"select multiple product"
+    },
+],
+"presets": [{
+    "name":"product and product list",
+    "category":"Custom Sections"
+}
+]
+}
+{%  endschema %}

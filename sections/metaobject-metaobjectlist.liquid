@@ -1,0 +1,69 @@
+<div>
+{%  assign col = section.settings.metaobject-id %}
+ <img src="{{ col.photo | image_url: width: auto, height: auto }}"
+         alt="{{ col.photo.alt | escape }}"
+         loading="lazy"
+         width="200px"
+         height="200px">
+ <h2>{{ col.heading | metafield_tag }}</h2>
+</div>
+
+{% comment %} METAOBJECT LIST {% endcomment %}
+<div class="metaobjectdiv">
+{%  for col in section.settings.metaobjectlist-id  %}
+   <div>
+    <img src="{{ col.photo | image_url: width: auto, height: auto }}"
+         alt="{{ col.photo.alt }}"
+         loading="lazy"
+         width="300px"
+         height="300px">
+    <h2>{{ col.heading | metafield_tag }}</h2>
+   </div>
+{% endfor %}
+</div>
+
+{% comment %} Fetching product details by using metaobject {% endcomment %}
+
+{{ section.settings.featured_item |json }}
+
+<style>
+.metaobjectdiv{
+    display:flex;
+    gap:20px;
+}
+</style>
+{%  schema %}
+{
+
+"name":"metaObject-metaObjectlist",
+"settings": [
+    {
+        "type": "metaobject",
+        "id": "metaobject-id",
+        "label":"selct one metaobject",
+        "metaobject_type": "cart_metaobject"
+    },
+     {
+        "type": "metaobject_list",
+        "id": "metaobjectlist-id",
+        "label":"selct multiple metaobject",
+        "metaobject_type": "cart_metaobject"
+    },
+     {
+        "type": "metaobject",
+        "id": "featured_item",
+        "label":"select one metaobject",
+        "metaobject_type": "product_metaobject"
+    },
+],
+"presets": [
+    {
+    "name": "metaObject-metaObjectlist",
+    "category":"Custom Sections"
+    }
+]
+}
+
+
+
+{% endschema %}

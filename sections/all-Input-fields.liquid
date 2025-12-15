@@ -1,0 +1,252 @@
+<div>{{ section.settings.annoucement-id }}{{section.settings.head_id }}</div>
+<div class="blogpost">
+    <h2 class="center">{{ section.settings.blog_id.title }}</h2>
+    <div class="for-blog">
+        {%  assign max_article = section.settings.limit-number-id %}
+   {% for article in blogs[section.settings.blog_id].articles limit:max_article %}
+    <div class="for-article">
+        <a href="{{ article.url }}">
+        <img src="{{ article.image | image_url: width: auto, height: auto }}" alt="{{ article.image.alt | escape }}"
+         loading="lazy" width="300px" height="200px">
+        <h2>{{ article.title}}</h2>
+        <h3>{{ article.published_at | date:"%D" }} | {{ article.author }}</h3>
+        </a>
+    </div>
+    {% endfor %}
+    </div>
+</div>
+<div class="articlepost color-{{ section.settings.color_scheme_id }}">
+    {% assign article = section.settings.article_id %}
+    <h2 class="center">{{article.title }}</h2>
+    <div class="for-article">
+        <a href="{{ article.url }}">
+        <img src="{{ article.image | image_url: width: auto, height: auto }}" alt="{{ article.image.alt | escape }}"
+         loading="lazy" width="300px" height="200px">
+        <h2>{{ article.title}}</h2>
+        <h3>{{ article.published_at | date:"%D" }} | {{ article.author }}</h3>
+        </a>
+        <div class="article-btn "><a href="{{ section.settings.button_link_id }}" class="button">{{ section.settings.button-txt-id }}</a></div>
+    </div>
+</div>
+<div class="for-radio" >
+    <h2 class="font-text" style="text-align:{{ section.settings.logo_aligment }};">helloooo</h2>
+</div>
+<div class="svg-section">
+    {% for block in section.blocks %}
+      <div class>
+        {{ block.settings.svg_id }}
+      </div>
+    {% endfor %}
+</div>
+<div style="display:flex;justify-content:space-evenly" >
+    <div>
+        <img src="{{ section.settings.image_id | image_url: width: auto, height: auto }}" alt="{{section.settings.image_id.alt | escape }}"
+         loading="lazy" width="100px" height="80px">
+    </div>
+    <div>
+        <ul style="display:flex;justify-content:space-between; gap:20px;">
+    {%  for link in linklists[section.settings.menu_id].links %}
+      <li style="list-style:none">
+        <a href="{{ link.url }}">{{ link.title }}</a>
+      </li>
+    {% endfor %}
+    </ul>
+    </div>
+</div>
+<div><a href="{{ section.settings.page_id }}">open page</a></div>
+<div style="text-align:{{ section.settings.alignment }}">
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt vel iusto quia maiores, impedit quod mollitia aliquid? Veritatis adipisci quidem voluptates quasi. Sit, veritatis incidunt facilis consequuntur omnis maxime soluta autem, tenetur eius mollitia voluptatum. Aliquid id libero iusto quia animi tempora in? Provident velit facere fugit adipisci suscipit voluptatibus blanditiis cum laudantium odit necessitatibus excepturi vitae iure, rem autem voluptate eos quibusdam soluta officiis veritatis et quod maxime. Quisquam est exercitationem facilis, ab aperiam necessitatibus praesentium eos sunt amet porro! Ea vel nostrum suscipit! Velit perspiciatis, non, porro in excepturi cum esse quis voluptatibus earum, praesentium voluptates exercitationem dignissimos.
+</div>
+<div>
+  {{ section.settings.video | video_tag: autoplay: true,controls:true,height:"200px"}}  
+</div>
+<div>
+{% if section.settings.video_url_id != blank %}
+  <div class="video-wrapper">
+    {% if section.settings.video_url_id.type == 'youtube' %}
+      <iframe src="https://www.youtube.com/embed/{{ section.settings.video_url_id.id }}"  allowfullscreen> </iframe>
+    {% elsif section.settings.video_url_id.type == 'vimeo' %}
+      <iframe src="https://player.vimeo.com/video/{{ section.settings.video_url_id.id }}" allowfullscreen></iframe>
+    {% endif %}
+  </div>
+{% endif %}
+</div>
+<div style="background:{{ section.settings.color-back_id }};height:100px;width:100%;margin-top:20px;">
+  <p>This div has a background color set using the color background input field.</p>
+</div>
+<style>
+       {{ section.settings.heading_font | font_face }}
+    .font-text{
+    font-family: {{ section.settings.heading_font.family }},
+                 {{ section.settings.heading_font.fallback_families }};
+    }
+    .for-radio{
+        height:100px;
+        width:100%;
+        background-color:pink;
+    }
+    .blogpost{
+        margin:0 auto;
+        padding-bottom:20px;
+        background-color:gray;
+        border:1px solid black;
+    }
+    .articlepost{
+        padding-bottom:20px;
+        background:var(--gradient-background )
+    }
+    .for-blog{
+       display:flex;
+       gap:20px;
+    }
+    .for-article{
+        width: 30%;
+        padding-top:20px;
+        margin: 0 auto;
+        background-color: #E8E8E8;
+        border: 1px solid black;
+        text-align: center;
+    }
+    .for-article a{
+        text-decoration:none;
+    }
+    .article-btn a{
+        padding: 10px;
+        text-decoration: none;
+        font-weight: 900;
+        margin-bottom:20px;
+        text-decoration:none;
+    }
+    .svg-section{
+        display:flex;
+        gap:30px;
+    }
+</style>
+{%schema %}
+{
+"name":"all input field",
+"settings": [
+    {
+    "type":"checkbox",
+    "id": "checkbox-id",
+    "label": "Show anoucement",
+    "info": "Learn more about [Shopify Input Settings](https://shopify.dev/docs/storefronts/themes/architecture/settings/input-settings)"
+    },
+    {
+    "type": "inline_richtext",
+    "id": "annoucement-id",
+    "label": "Annoucement",
+    },
+    {
+    "type": "richtext",
+    "id": "head_id",
+    "label": "heading",
+    },
+    {
+    "type": "blog",
+    "id": "blog_id",
+    "label": "Blog"
+    },
+    {
+    "type": "number",
+    "id": "limit-number-id",
+    "label": "limits of articles",
+    "default":2
+    },
+    {
+    "type": "article",
+    "id": "article_id",
+    "label": "article"
+    },
+    {
+    "type": "text",
+    "id": "button-txt-id",
+    "label": "Button label"
+    },
+    {
+    "type": "url",
+    "id": "button_link_id",
+    "label": "Button link"
+    },
+    {
+    "type": "color_scheme",
+    "id": "color_scheme_id",
+    "default": "scheme_xyz",
+    "label": "Color scheme"
+    },
+    {
+        "type": "radio",
+        "id": "logo_aligment",
+        "label": "Logo alignment",
+        "options": [
+            {   "value": "left", "label": "Left" },
+            {   "value": "center","label": "Centered"},
+            {   "value": "right","label": "Right"}
+            ],
+    },
+    {
+        "type": "font_picker",
+        "id": "heading_font",
+        "label": "Heading font",
+        "default": "helvetica_n4"
+    },
+    {
+        "type": "link_list",
+        "id": "menu_id",
+        "label": "Menu"
+    },
+    {
+  "type": "page",
+  "id": "page_id",
+  "label": "Page"
+},
+{
+   "type": "text_alignment",
+   "id": "alignment",
+   "label": "Text alignment",
+   "default": "center"
+},
+{
+  "type": "video",
+  "id": "video",
+  "label": "Select video"
+},
+{
+  "type": "video_url",
+  "id": "video_url_id",
+  "label": "description video",
+  "accept": [
+    "youtube",
+    "vimeo"
+  ]
+},
+{
+"type":"image_picker",
+"id": "image_id",
+"label": "logo "
+},
+{
+  "type":"color_background",
+  "id": "color-back_id",
+  "label": "background color"
+}
+],
+"blocks": [
+            {
+                "type": "block",
+                "name":"svg section",
+                "settings":[
+                    {
+                        "type": "html",
+                        "id": "svg_id",
+                        "label": "Write svg code"
+                    }
+                ]
+            }
+        ],
+"presets":[{
+"name":"all-input-fields",
+"category": "Custom Sections"
+}]
+}
+{% endschema %}

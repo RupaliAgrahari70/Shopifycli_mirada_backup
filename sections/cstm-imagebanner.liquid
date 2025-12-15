@@ -1,0 +1,172 @@
+<section class="req-banner-section">
+    <img src="{{ section.settings.bg_image | img_url: '' }}" class="req-bg-img" >
+    <div class="req-banner-content req-align-{{ section.settings.text_alignment }}"  style="background-color:{{ section.settings.bgclr_id}}">
+      <div class="req-heading">{{ section.settings.heading }}</div>
+      <div class="req-sub">{{ section.settings.subheading }}</div>
+      <a href="{{ section.settings.button_link }}" class="req-btn" style="background-color:{{ section.settings.btncolorid }}">
+        {{ section.settings.button_text }}
+      </a>
+    </div>
+
+</section>
+
+<style>
+.req-banner-section {
+  position: relative;
+  width: 100%;
+  padding: 30px 50px;
+}
+.req-bg-img {
+  width: 100%;
+  display: block;
+}
+.req-banner-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);  
+  width: 45%;
+  padding: 20px;
+  color: #fff;
+  z-index: 2;
+}
+.req-heading {
+  font-size: 30px;
+  font-weight: 700;
+  padding-bottom: 20px;
+  line-height: normal;
+}
+.req-sub {
+  font-size: 12px;
+  padding: 0px 0px 30px;
+  line-height: normal;
+}
+.req-btn {
+  color: #222;
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 900;
+  transition: 0.3s ease;
+}
+
+.req-align-left {
+  text-align: left;
+}
+
+.req-align-center {
+  text-align: center;
+}
+
+.req-align-right {
+  text-align: right;
+}
+
+@media (max-width: 1024px) 
+{ .req-heading 
+  { 
+    font-size: 25px;
+    padding-bottom:15px; 
+    line-height:1; 
+  } 
+  .req-banner-content {
+     width:50%; 
+    } 
+     .req-sub { 
+      font-size: 10px; 
+      {% comment %} padding: 0px 5% 3%;  {% endcomment %}
+    } 
+}
+@media (max-width: 768px) {
+  .req-banner-content {
+    width: 51%;
+  }
+  .req-heading {
+    font-size: 23px;
+  }
+  .req-sub {
+    font-size: 12px;
+  }
+  .req-btn{
+    font-size: 14px;
+    padding: 7px 10px;
+  }
+  .req-banner-content {
+    color:#000;
+    position: static ;
+    transform: none ;
+    width: 80%;
+    margin:25px auto;
+    padding: 20px 15px;
+    text-align: center; 
+  }
+  .req-banner-section {
+    padding:0;}
+}
+
+</style>
+
+{% schema %}
+{
+    "name": "Custom banner text",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Content Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Request Line Sheet & Planograms"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Get the current line sheet, planogram recommendations, and SRP details for brand partners."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Request Access"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+     {
+      "type": "color",
+      "id": "bgclr_id",
+      "label": "Background color",
+    },
+    {
+      "type": "color",
+      "id": "btncolorid",
+      "label": "Button color",
+      "default":" #ffb400"
+    }
+  ],
+
+  "presets": [
+    {
+        "name": "Custom banner text",
+      "category":"Custom Sections"
+    }
+  ]
+}
+{% endschema %}

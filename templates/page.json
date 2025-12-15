@@ -1,0 +1,252 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "all_input_fields_kbHPwg": {
+      "type": "all-Input-fields",
+      "blocks": {
+        "block_4NwCer": {
+          "type": "block",
+          "settings": {
+            "svg_id": "<h2>helloo</h2>"
+          }
+        },
+        "block_KVA39g": {
+          "type": "block",
+          "settings": {
+            "svg_id": "<h2>helloo</h2>"
+          }
+        }
+      },
+      "block_order": [
+        "block_4NwCer",
+        "block_KVA39g"
+      ],
+      "name": "all-input-fields",
+      "settings": {
+        "checkbox-id": false,
+        "annoucement-id": "<strong>i'm inline richtext</strong>",
+        "head_id": "<h4><strong>i'm richtext</strong></h4>",
+        "blog_id": "food",
+        "limit-number-id": 3,
+        "article_id": "jewellery/the-ultimate-necklace-length-guide-find-your-perfect-fit-style",
+        "button-txt-id": "Learn About",
+        "button_link_id": "shopify://blogs/jewellery/the-ultimate-necklace-length-guide-find-your-perfect-fit-style",
+        "color_scheme_id": "scheme-5",
+        "logo_aligment": "center",
+        "heading_font": "bagel_fat_one_n4",
+        "menu_id": "makeup",
+        "page_id": "vission-misson",
+        "alignment": "left",
+        "video": "shopify://files/videos/855135-hd_1280_720_24fps.mp4",
+        "video_url_id": "https://youtu.be/K7o9fUEP3GU?si=N7r8Fbi8PNBcwGYX",
+        "image_id": "shopify://shop_images/eStore_logo.webp"
+      }
+    },
+    "image_banner_bpw6Td": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_nVmXy9": {
+          "type": "heading",
+          "settings": {
+            "heading": "Request Line Sheet & Planograms",
+            "heading_size": "h1"
+          }
+        },
+        "text_kkQHVG": {
+          "type": "text",
+          "settings": {
+            "text": "Request Line Sheet & PlanogramsGet the current line sheet, planogram recommendations, and SRP details—shared upon request for MT & branded retail partners.Request Access",
+            "text_style": "body"
+          }
+        },
+        "buttons_TDWEFM": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "Button label",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_nVmXy9",
+        "text_kkQHVG",
+        "buttons_TDWEFM"
+      ],
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Frame_1034_1_e500ec51-db59-4164-9f70-13ba9b59c7cd.png",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "image_behavior": "none",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": false,
+        "color_scheme": "scheme-2",
+        "stack_images_on_mobile": true,
+        "mobile_content_alignment": "center",
+        "show_text_below": true
+      }
+    },
+    "cstm_product_range_slider_THHxpq": {
+      "type": "cstm-product-range-slider",
+      "blocks": {
+        "product_card_grD4Kw": {
+          "type": "product_card",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_258.png",
+            "title": "Mirada Playtime — Soft, Safe Plush for Every Aisle",
+            "text": "A focused plush range designed for fast rotation and family appeal—with multiple price bands and MT-ready packaging for easy shelfing.",
+            "productrangeblockid": "#f3ecf5"
+          }
+        },
+        "product_card_F7bH3G": {
+          "type": "product_card",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_258_1.png",
+            "title": "Mirada Creativity — Creativity Kits Kids Love, Parents Trust",
+            "text": "Art & DIY kits that build skills and sparkle giftability—packed barcode-ready and planogram-friendly for modern t",
+            "productrangeblockid": "#f3ecf5"
+          }
+        },
+        "product_card_QqE4Xq": {
+          "type": "product_card",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_258_2.png",
+            "title": "Mirada Fantasy — Dolls & Role-Play for Storytime",
+            "text": "Dolls, dress-up, and role-play sets with strong repeat play—available in value to premium tiers and shelf-ready cartons.",
+            "productrangeblockid": "#f3ecf5"
+          }
+        },
+        "product_card_aRkiWa": {
+          "type": "product_card",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_258_3.png",
+            "title": "Mirada Playtime — Soft, Safe Plush for Every Aisle",
+            "text": "A focused plush range designed for fast rotation and family appeal—with multiple price bands and MT-ready packaging for easy shelfing.",
+            "productrangeblockid": "#f3ecf5"
+          }
+        },
+        "product_card_RQtbiy": {
+          "type": "product_card",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_258.png",
+            "title": "Mirada Playtime — Soft, Safe Plush for Every Aisle",
+            "text": "A focused plush range designed for fast rotation and family appeal—with multiple price bands and MT-ready packaging for easy shelfing.",
+            "productrangeblockid": "#f3ecf5"
+          }
+        },
+        "product_card_qVUrD8": {
+          "type": "product_card",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_258_3.png",
+            "title": "Mirada Playtime — Soft, Safe Plush for Every Aisle",
+            "text": "A focused plush range designed for fast rotation and family appeal—with multiple price bands and MT-ready packaging for easy shelfing.",
+            "productrangeblockid": "#f3ecf5"
+          }
+        }
+      },
+      "block_order": [
+        "product_card_grD4Kw",
+        "product_card_F7bH3G",
+        "product_card_QqE4Xq",
+        "product_card_aRkiWa",
+        "product_card_RQtbiy",
+        "product_card_qVUrD8"
+      ],
+      "name": "Product Range Slider",
+      "settings": {
+        "heading": "Explore Mirada’s Product Range",
+        "button_text": "View More",
+        "button_link": "#",
+        "product-range-sectionid": "#f4ecec",
+        "buttoncolorid": "#ffb400"
+      }
+    },
+    "cstm_imagebanner_BC9YcY": {
+      "type": "cstm-imagebanner",
+      "name": "Custom banner text",
+      "settings": {
+        "bg_image": "shopify://shop_images/Frame_1034_2.png",
+        "text_alignment": "center",
+        "heading": "Request Line Sheet & Planograms",
+        "subheading": "Request Line Sheet & Planograms\nGet the current line sheet, planogram recommendations, and SRP details—shared upon request for MT & branded retail partners.\nRequest Access",
+        "button_text": "Request Access",
+        "button_link": "",
+        "bgclr_id": "rgba(0,0,0,0)",
+        "btncolorid": "#ffb400"
+      }
+    },
+    "product_productlist_K4Ccpq": {
+      "type": "product-productlist",
+      "name": "product and product list",
+      "settings": {
+        "product_id": "apple",
+        "product-list": [
+          "artificial-plant-fake-bonsai-tree-with-mini-faux-flowers-24cm",
+          "crocs-1",
+          "air-hockey-for-kids-electric-powered-with-2-strikers-4-pucks-air-hockey-table-for-adults-tabletop-game-indoor-fun-interactive-sports-toy-for-boys-girls-age-5"
+        ]
+      }
+    },
+    "collection_collectionlist_qBEYf7": {
+      "type": "collection-collectionlist",
+      "name": "collection-collection-list",
+      "settings": {
+        "collection_id": "beauty-and-makeup",
+        "collection-list": [
+          "green-vegitable",
+          "fruits",
+          "baggage-bag",
+          "clothing",
+          "frontpage",
+          "l-oreal-paris",
+          "nykaa",
+          "jwelleries",
+          "huda-beauty"
+        ]
+      }
+    },
+    "metaobject_metaobjectlist_aAWP3Q": {
+      "type": "metaobject-metaobjectlist",
+      "name": "metaObject-metaObjectlist",
+      "settings": {
+        "metaobject-id": "cart-metaobject-rupaliagrahari",
+        "metaobjectlist-id": [
+          "cart-metaobject-rupaliagrahari",
+          "cart-metaobject-niharika",
+          "cart-metaobject-divya"
+        ],
+        "featured_item": "product-metaobject-ojttomhu"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "all_input_fields_kbHPwg",
+    "image_banner_bpw6Td",
+    "cstm_product_range_slider_THHxpq",
+    "cstm_imagebanner_BC9YcY",
+    "product_productlist_K4Ccpq",
+    "collection_collectionlist_qBEYf7",
+    "metaobject_metaobjectlist_aAWP3Q"
+  ]
+}
